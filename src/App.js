@@ -33,6 +33,18 @@ function App() {
 				<input onChange={onChange} value={keyword} type="text" placeholder="Search" />
 				<button>Search</button>
 			</form>
+			<div>
+				{pictures.map((picture) => (
+					<Picture
+						key={picture.data[0].nasa_id}
+						image={picture.links[0].href}
+						center={picture.data[0].center}
+						title={picture.data[0].title}
+						date_created={picture.data[0].date_created}
+						description={picture.data[0].description}
+						keywords={picture.data[0].keywords}/>
+				))}
+			</div>
 			<hr />
     	</div>
   	);
