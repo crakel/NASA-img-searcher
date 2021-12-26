@@ -1,0 +1,12 @@
+.pagination {
+	display:inline-block;
+	width:100%;
+	margin: 0 auto; 
+	text-align: center;
+}
+
+.pagination ul li {
+	padding-bottom: 5px; 
+	font-size: 20px; 
+	display:inline-block;
+}

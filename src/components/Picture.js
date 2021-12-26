@@ -1,31 +1,38 @@
 import PropTypes from "prop-types"
 import "./Picture.css"
 
-const Picture = ({ image, center, title, date_created, description, keywords }) => {
+//{ image, center, title, date_created, description }
+const Picture = ({ pictures, loading }) => {
+	if (loading) {
+    	return <h2>Loading...</h2>;
+  	}
+	
 	return (
-			<div className="col-12 col-md-6 col-lg-4 mb-4" key={title}>
+		pictures.filter((picture) => (picture.data && picture.links)).map((picture, i) => (
+			<div className="col-12 col-md-6 col-lg-4 mb-4" key={picture.data[0].nasa_id}>
 				<div className="card">
-					<img className="card-img-top" src={image} alt={title} />
+					<img className="card-img-top" src={picture.links[0].href} alt={picture.data[0].title} />
 					<div className="card-body">
-						<h3 className="card-title">{title}</h3>
-						<p className="card-text">{description}</p>
+						<h3 className="card-title">{picture.data[0].title}</h3>
+						<p className="card-text">{picture.data[0].description}</p>
 					</div>
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">date : {date_created}</li>
-						<li class="list-group-item">center : {center}</li>
+					<ul className="list-group list-group-flush">
+						<li className="list-group-item">date : {picture.data[0].date_created.split('T')[0]}</li>
+						<li className="list-group-item">center : {picture.data[0].center}</li>
 					</ul>
 				</div>
 			</div>
+		))
 	);
 };
 
-Picture.propTypes = {
-	image: PropTypes.string.isRequired,
-	center: PropTypes.string.isRequired,
-	title: PropTypes.string.isRequired,
-	date_created: PropTypes.string.isRequired,
-	description: PropTypes.string.isRequired,
-	keywords: PropTypes.arrayOf(PropTypes.string),
-}
+// pictures.propTypes = {
+// 	image: PropTypes.string.isRequired,
+// 	center: PropTypes.string.isRequired,
+// 	title: PropTypes.string.isRequired,
+// 	date_created: PropTypes.string.isRequired,
+// 	description: PropTypes.string.isRequired,
+// 	keywords: PropTypes.arrayOf(PropTypes.string),
+// }
 
 export default Picture;
