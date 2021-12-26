@@ -54,7 +54,7 @@ function App() {
 		getDefaults();
 	}, []);
 	
-	
+	/* getPictures when searched */
 	useEffect(() => {
 		if (firstpage === true) {
 			return;

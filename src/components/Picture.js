@@ -1,6 +1,6 @@
 import "./Picture.css"
 
-//{ image, center, title, date_created, description }
+// { image, center, title, date_created, description }
 const Picture = ({ pictures, loading }) => {
 	if (loading) {
     	return (
@@ -11,6 +11,7 @@ const Picture = ({ pictures, loading }) => {
 		);
   	}
 	
+	/* with no pictures */ 
 	if (pictures.length < 1) {
 		return (
 			<h2>No Results For Search.</h2>
@@ -18,7 +19,6 @@ const Picture = ({ pictures, loading }) => {
 	};
 	
 	return (
-		
 		pictures.filter((picture) => (picture.data && picture.links)).map((picture, i) => (
 			<div className="col-12 col-md-6 col-lg-4 mb-4 mleft" style={{width: "500px"}} key={picture.data[0].nasa_id}>
 				<div className="card">
