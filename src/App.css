@@ -9,6 +9,10 @@
 	height: 100%;
 }
 
-.main {
-	height: 50vh;
+.search {
+	height: 40vh;
+}
+
+.mleft {
+	padding-left: 60px;
 }

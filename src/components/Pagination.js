@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import "./Pagination.css"
 
 const Pagination = ({ picsPerPage, totalPics, paginate }) => {
@@ -9,15 +8,17 @@ const Pagination = ({ picsPerPage, totalPics, paginate }) => {
   }
   return (
     <div className="pagination">
-        <ul>
-          {pageNumbers.map((number) => (
-            <li key={number} className="page-item">
-              <a onClick={() => paginate(number)} className="page-link">
-                {number}
-              </a>
-            </li>
-          ))}
-        </ul>
+		<nav>
+			<ul>
+			  {pageNumbers.map((number) => (
+				<li key={number} className="page-item">
+				  <a onClick={() => paginate(number)} className="page-link">
+					{number}
+				  </a>
+				</li>
+			  ))}
+			</ul>
+		</nav>
     </div>
   );
 };

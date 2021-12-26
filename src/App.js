@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Picture from "./components/Picture";
 import Pagination from "./components/Pagination";
-import styles from "./App.module.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'font-awesome/css/font-awesome.min.css'; 
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "font-awesome/css/font-awesome.min.css"; 
 
 
 function App() {
@@ -42,7 +42,6 @@ function App() {
 				console.log("defaults");
 			} catch (e) {
 				setError(e);
-				console.log(error);
 			}
 			setLoading(false);
 		};
@@ -107,15 +106,15 @@ function App() {
 		setQuery("");
 	};
 	
-	console.log(query);
-	console.log(pictures);
-	console.log("set loading : ", loading);
-	console.log(filter);
+	const onEnter = (event) => {
+		if(event.key === "Enter") onClick();
+	}
+	
 	
 	return (
     	<div>
-			<section className={styles.main}>
-			  <div className={styles.background__img}>
+			<section className="search">
+			  <div className="background__img">
 				<div className="mask d-flex align-items-center h-100" style={{backgroundColor: "rgba(0,0,0, 0.3)"}}>
 				  <div className="container">
 					<p className="h2 mb-4 text-white">Search Image<br />On NASA</p>
@@ -132,7 +131,7 @@ function App() {
 								<option value="5">Description</option>
 							  </select>
 							  <div className="form-outline flex-fill">
-								<input onChange={onChange} type="search" id="form1" className="form-control form-control-lg" />
+								<input onKeyPress={onEnter} onChange={onChange} type="search" id="form1" className="form-control form-control-lg" />
 							  </div>
 							  <button onClick={onClick} type="button" className="btn btn-primary btn-lg">
 								<i className="fa fa-search"></i>
@@ -148,7 +147,7 @@ function App() {
 			</section>
 			<br />
 			<hr />
-			<div>
+			<div className="mleft">
 				{error ? 
 					<div>
 					 	<h2>{error}</h2>
@@ -159,7 +158,7 @@ function App() {
 				}
 				{firstpage ?
 					<div>
-					 	<h2 mb-4>Check 2021 YEAR images On NASA !</h2>
+					 	<h2>Check 2021 YEAR Images On NASA !</h2>
 					 	<br />
 						<div className="row">
 							<Picture pictures={currentPics(defaults)} loading={loading}></Picture>

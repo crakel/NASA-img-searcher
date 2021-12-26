@@ -9,7 +9,7 @@ const Picture = ({ pictures, loading }) => {
 	
 	return (
 		pictures.filter((picture) => (picture.data && picture.links)).map((picture, i) => (
-			<div className="col-12 col-md-6 col-lg-4 mb-4" key={picture.data[0].nasa_id}>
+			<div className="col-12 col-md-6 col-lg-4 mb-4 mleft" style={{width: "500px"}} key={picture.data[0].nasa_id}>
 				<div className="card">
 					<img className="card-img-top" src={picture.links[0].href} alt={picture.data[0].title} />
 					<div className="card-body">

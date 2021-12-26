@@ -2,6 +2,10 @@
     object-fit: cover;
 }
 
+.mleft {
+	margin-left: 20px;
+}
+
 .row {
    display: flex;
    flex-wrap: wrap;
