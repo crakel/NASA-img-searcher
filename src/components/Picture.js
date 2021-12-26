@@ -1,16 +1,23 @@
 import PropTypes from "prop-types"
+import "./Picture.css"
 
 const Picture = ({ image, center, title, date_created, description, keywords }) => {
 	return (
-		<div>
-			<img src={image} alt={title} />
-			<h2>{title}</h2>
-			<h3>{date_created}</h3>
-			<p>{description}</p>
-			<h3>keywords</h3>
-		</div>
+			<div className="col-12 col-md-6 col-lg-4 mb-4" key={title}>
+				<div className="card">
+					<img className="card-img-top" src={image} alt={title} />
+					<div className="card-body">
+						<h3 className="card-title">{title}</h3>
+						<p className="card-text">{description}</p>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">date : {date_created}</li>
+						<li class="list-group-item">center : {center}</li>
+					</ul>
+				</div>
+			</div>
 	);
-}
+};
 
 Picture.propTypes = {
 	image: PropTypes.string.isRequired,
