@@ -1,13 +1,24 @@
-import PropTypes from "prop-types"
 import "./Picture.css"
 
 //{ image, center, title, date_created, description }
 const Picture = ({ pictures, loading }) => {
 	if (loading) {
-    	return <h2>Loading...</h2>;
+    	return (
+			<div class="fa-2x">
+  				<i class="fa fa-spinner fa-spin" style={{float: "left", marginRight: "10px"}}></i>
+				<h3>Loading...</h3>
+			</div>
+		);
   	}
 	
+	if (pictures.length < 1) {
+		return (
+			<h2>No Results For Search.</h2>
+		)
+	};
+	
 	return (
+		
 		pictures.filter((picture) => (picture.data && picture.links)).map((picture, i) => (
 			<div className="col-12 col-md-6 col-lg-4 mb-4 mleft" style={{width: "500px"}} key={picture.data[0].nasa_id}>
 				<div className="card">
@@ -25,14 +36,5 @@ const Picture = ({ pictures, loading }) => {
 		))
 	);
 };
-
-// pictures.propTypes = {
-// 	image: PropTypes.string.isRequired,
-// 	center: PropTypes.string.isRequired,
-// 	title: PropTypes.string.isRequired,
-// 	date_created: PropTypes.string.isRequired,
-// 	description: PropTypes.string.isRequired,
-// 	keywords: PropTypes.arrayOf(PropTypes.string),
-// }
 
 export default Picture;

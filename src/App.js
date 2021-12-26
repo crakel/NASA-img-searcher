@@ -41,7 +41,13 @@ function App() {
 				setDefaults(res.data.collection.items);
 				console.log("defaults");
 			} catch (e) {
-				setError(e);
+				if (e.response.status === 400) {
+					setError("The request was unacceptable, often due to missing a required parameter.");
+				} else if (e.response.status === 404) {
+					setError("The requested resource doesn’t exist.");
+				} else {
+					setError("Something went wrong on the API’s end.");
+				}
 			}
 			setLoading(false);
 		};
@@ -146,7 +152,6 @@ function App() {
 			  </div>
 			</section>
 			<br />
-			<hr />
 			<div className="mleft">
 				{error ? 
 					<div>
