@@ -1,8 +1,8 @@
 # 🚀 NASA-img-searcher
 ![NASA-img-searcher](https://user-images.githubusercontent.com/59333136/152462396-e0c9c99f-ae72-4361-98bc-0fc5b24509d1.png)
 
-> NASA Open API 를 이용해 NASA에 있는 이미지를 Center, Title, Year, Description 의 필터링을 통해
-> 검색할 수 있는 SPA 웹 어플리케이션
+> NASA Open API 를 이용해 NASA에 저장된 이미지를  
+> Center, Title, Year, Description 의 필터링을 통해 검색할 수 있는 SPA 웹 어플리케이션
 ## ✨  Period
 2021.12.22 ~ 2022.12.27
 
