@@ -19,7 +19,7 @@ function App() {
 	
 	/* for pagination */
 	const [currentPage, setCurrentPage] = useState(1);
-	const [picsPerPage, setPicsPerPage] = useState(6);
+	const [picsPerPage] = useState(8);
 	const indexOfLast = currentPage * picsPerPage;
   	const indexOfFirst = indexOfLast - picsPerPage;
   	
@@ -39,7 +39,6 @@ function App() {
 				setLoading(true);
 				const res = await axios.get("https://images-api.nasa.gov/search?year_start=2021");
 				setDefaults(res.data.collection.items);
-				console.log("defaults");
 			} catch (e) {
 				if (e.response.status === 400) {
 					setError("The request was unacceptable, often due to missing a required parameter.");

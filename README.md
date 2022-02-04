@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# 🚀 NASA-img-searcher
+![NASA-img-searcher](https://user-images.githubusercontent.com/59333136/152462396-e0c9c99f-ae72-4361-98bc-0fc5b24509d1.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> NASA Open API 를 이용해 NASA에 있는 이미지를 Center, Title, Year, Description 의 필터링을 통해
+> 검색할 수 있는 SPA 웹 어플리케이션
+## ✨  Period
+2021.12.22 ~ 2022.12.27
 
-## Available Scripts
+## ✨  Technology used
+  * React (17.0.2)
+  * Bootstrap (5.1.3)
 
-In the project directory, you can run:
+## ✨ Directory Description
+  * /src/App.js
 
-### `npm start`
+         - Main Page 코드
+         - axios 를 통해 request한 NASA Open API response를 통해 불러온 정보들을 렌더링한다.
+         
+  * /src/components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+        - Pagination, Picture 렌더링을 위해 분리해놓은 components 코드
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## ✨ Development result
+### [Main Page]
+  
+   <img src="https://user-images.githubusercontent.com/59333136/152464687-273708fa-a2b8-4838-b4a5-118517151183.png" width="1000" height="500"/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  ------
+  
+### [Search Bar]
+  ***필터를 통해 해당하는 API로 검색 요청***  
 
-### `npm run build`
+  <img src="https://user-images.githubusercontent.com/59333136/152473293-a2bdbe29-032a-456c-ac95-193b80bd0deb.png" width="1000" height="200" />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ ------
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### [Pagination]
+***검색 결과를 각 Page Per Pics로 나타내 총 Data를 Page로 구현***  
 
-### `npm run eject`
+  <img src="https://user-images.githubusercontent.com/59333136/152474037-6d793b5c-832d-4160-8a28-f83ada31b0cd.png" width="1000" height="80" />
+  
+------
+    
+## ✨ How to process 
+* Running react-app
+```bash
+# intall
+$ npm install
+# start project
+$ npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## ✨ Contact
+-김기윤: crakeldev@gmail.com   
