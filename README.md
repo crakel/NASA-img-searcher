@@ -4,7 +4,7 @@
 > NASA Open API 를 이용해 NASA에 저장된 이미지를  
 > Center, Title, Year, Description 의 필터링을 통해 검색할 수 있는 SPA 웹 어플리케이션
 ## ✨  Period
-2021.12.22 ~ 2022.12.27
+2021.12.22 ~ 2021.12.27
 
 ## ✨  Technology used
   * React (17.0.2)
